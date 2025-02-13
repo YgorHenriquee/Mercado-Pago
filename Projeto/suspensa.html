@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Suspensa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #fff;
+        }
+        .container {
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .icon {
+            color: red;
+            font-size: 50px;
+        }
+        .warning {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .info {
+            color: gray;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+		.info1 {
+            color: #00BFFF;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #00BFFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+		<div class="icon">
+			<img src="bloqueio.jpeg" alt="Ícone de bloqueio" width="250">
+		</div>
+        <p class="warning">Sua conta foi suspensa e será encerrada em 90 dias</p>
+        <p class="info">Detectamos irregularidades em algumas de suas transações, por meio de denúncias de outros usuários.</p>
+        <p class="info">Além disso, você não poderá utilizar o saldo disponível no Mercado Pago, comprar ou transferir criptomoedas com dinheiro até <span id="date"></span>.</p>
+        <p class="info">Em caso de dúvidas, <a href=""class="info1">fale conosco para te ajudarmos.</a></p><br><br>
+        <a href="#" class="button">Acessos habilitados</a>
+    </div>
+
+    <script>
+        function atualizarData() {
+            let data = new Date();
+            let dataISO = data.toISOString().split('T')[0] + 'T11:06:38Z';
+            document.getElementById('date').textContent = dataISO;
+        }
+        atualizarData();
+    </script>
+</body>
+</html>
